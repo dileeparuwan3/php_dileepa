@@ -35,30 +35,50 @@
                 <label for="last_name">Last name</label>
 
                 <input style="display: block" id="last_name" name="last_name" type="text" value="{{ $salesRepresentative->last_name }}">
+
+                @if($errors->has('last_name'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('last_name') }}</div>
+                @endif
             </div>
 
             <div class="mt-3">
                 <label for="email">Email</label>
 
                 <input style="display: block" id="email" name="email" type="text" value="{{ $salesRepresentative->email }}">
+
+                @if($errors->has('email'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('email') }}</div>
+                @endif
             </div>
 
             <div class="mt-3">
                 <label for="telephone">Telephone</label>
 
                 <input style="display: block" id="telephone" name="telephone" type="text" value="{{ $salesRepresentative->telephone }}">
+
+                @if($errors->has('telephone'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('telephone') }}</div>
+                @endif
             </div>
 
             <div class="mt-3">
                 <label for="joined_at">Joined Date</label>
 
                 <input style="display: block" id="joined_at" name="joined_at" type="text" value="{{ $salesRepresentative->joined_at }}">
+
+                @if($errors->has('joined_at'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('joined_at') }}</div>
+                @endif
             </div>
 
             <div class="mt-3">
                 <label for="current_route">Current Route</label>
 
                 <input style="display: block" id="current_route" name="current_route" type="text" value="{{ $salesRepresentative->current_route }}">
+
+                @if($errors->has('current_route'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('current_route') }}</div>
+                @endif
             </div>
 
             <div class="mt-3">
@@ -67,6 +87,10 @@
                 <textarea style="display: block" id="comments" name="comments">
                     {{ $salesRepresentative->comments }}
                 </textarea>
+
+                @if($errors->has('comments'))
+                    <div class="mt-2" style="color: red">{{ $errors->first('comments') }}</div>
+                @endif
             </div>
         </div>
 

@@ -33,7 +33,7 @@ class SalesRepresentativeController extends Controller
             'last_name' => 'required',
             'email' => 'required',
             'telephone' => 'required',
-            'joined_at' => 'required',
+            'joined_at' => 'required|date',
             'current_route' => 'required',
             'comments' => 'nullable',
         ]);
@@ -63,7 +63,7 @@ class SalesRepresentativeController extends Controller
             'last_name' => 'required',
             'email' => 'required',
             'telephone' => 'required',
-            'joined_at' => 'required',
+            'joined_at' => 'required|date',
             'current_route' => 'required',
             'comments' => 'nullable',
         ]);

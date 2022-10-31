@@ -6,6 +6,15 @@
         <title>Laravel Pagination Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+        <style>
+            .page-pagination .w-5{
+                width: 25px;
+            }
+            .page-pagination .flex-1{
+                display: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -58,9 +67,9 @@
                 @endforeach
                 </tbody>
             </table>
-             Pagination
-            <div class="d-flex justify-content-center">
-                {!! $salesRepresentatives->links() !!}
+             
+            <div class="page-pagination d-flex justify-content-center">
+                {{$salesRepresentatives->links()}}
             </div>
         </div>
     </body>

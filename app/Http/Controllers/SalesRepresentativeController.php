@@ -72,7 +72,7 @@ class SalesRepresentativeController extends Controller
     }
 
 
-    public function validateSalesRepresentative(){
+    protected function validateSalesRepresentative(){
 
         return request()->validate([
             'first_name' => 'required',

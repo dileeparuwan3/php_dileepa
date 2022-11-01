@@ -28,15 +28,7 @@ class SalesRepresentativeController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'telephone' => 'required',
-            'joined_at' => 'required|date',
-            'current_route' => 'required',
-            'comments' => 'nullable',
-        ]);
+        $validated = $this->validateSalesRepresentative();
 
 
         SalesRepresentative::query()->create($validated);
@@ -58,15 +50,7 @@ class SalesRepresentativeController extends Controller
 
     public function update(Request $request, SalesRepresentative $salesRepresentative): RedirectResponse
     {
-        $validated = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'telephone' => 'required',
-            'joined_at' => 'required|date',
-            'current_route' => 'required',
-            'comments' => 'nullable',
-        ]);
+        $validated = $this->validateSalesRepresentative();
 
         $salesRepresentative->first_name = $validated['first_name'];
         $salesRepresentative->last_name = $validated['last_name'];
@@ -85,5 +69,19 @@ class SalesRepresentativeController extends Controller
         $salesRepresentative->delete();
 
         return redirect(route('sales-representatives.index'));
+    }
+
+
+    public function validateSalesRepresentative(){
+
+        return request()->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'telephone' => 'required',
+            'joined_at' => 'required|date',
+            'current_route' => 'required',
+            'comments' => 'nullable',
+        ]);
     }
 }
